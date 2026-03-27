@@ -1,28 +1,44 @@
-name: NodeJS with Webpack
+name: Smart README Update
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  schedule:
+    - cron: "0 */4 * * *"  # 6 times/day
+  workflow_dispatch:
 
 jobs:
-  build:
+  update-readme:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Fetch quote
+        run: |
+          curl -s https://programming-quotesapi.vercel.app/api/random > quote.json
+          QUOTE=$(jq -r '.en' quote.json)
+          AUTHOR=$(jq -r '.author' quote.json)
 
-    - name: Build
-      run: |
-        npm install
-        npx webpack
+          echo "> \"$QUOTE\" — $AUTHOR" > quote.txt
+
+      - name: Update README
+        run: |
+          # Update quote
+          awk '
+          /## 💬 Dev Quote/ {print; getline; system("cat quote.txt"); next}
+          1
+          ' README.md > temp.md && mv temp.md README.md
+
+          # Update timestamp
+          sed -i "s|<!--LAST_UPDATED-->|Last update: $(date)|" README.md
+
+      - name: Commit & push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          git diff --quiet && git diff --staged --quiet || git commit -m "Smart README update"
+
+          git push
