@@ -13,24 +13,49 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch quote
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Fetch quote (SAFE)
         run: |
-          curl -s https://programming-quotesapi.vercel.app/api/random > quote.json
-          QUOTE=$(jq -r '.en' quote.json)
-          AUTHOR=$(jq -r '.author' quote.json)
+          echo "Fetching quote..."
+
+          RESPONSE=$(curl -s --max-time 10 https://programming-quotesapi.vercel.app/api/random || echo "")
+
+          # Try parsing safely
+          QUOTE=$(echo "$RESPONSE" | jq -r '.en' 2>/dev/null)
+          AUTHOR=$(echo "$RESPONSE" | jq -r '.author' 2>/dev/null)
+
+          # Fallback if API fails
+          if [ -z "$QUOTE" ] || [ "$QUOTE" = "null" ]; then
+            QUOTE="Stay consistent. Discipline beats motivation."
+            AUTHOR="Unknown"
+          fi
 
           echo "> \"$QUOTE\" — $AUTHOR" > quote.txt
 
       - name: Update README
         run: |
-          # Update quote
+          # Ensure section exists
+          grep -q "## 💬 Dev Quote" README.md || echo -e "\n## 💬 Dev Quote\n" >> README.md
+
+          # Update quote safely
           awk '
-          /## 💬 Dev Quote/ {print; getline; system("cat quote.txt"); next}
+          /## 💬 Dev Quote/ {
+            print;
+            getline;
+            system("cat quote.txt");
+            next
+          }
           1
           ' README.md > temp.md && mv temp.md README.md
 
-          # Update timestamp
-          sed -i "s|<!--LAST_UPDATED-->|Last update: $(date)|" README.md
+          # Update timestamp safely
+          if grep -q "<!--LAST_UPDATED-->" README.md; then
+            sed -i "s|<!--LAST_UPDATED-->|Last update: $(date)|" README.md
+          else
+            echo -e "\nLast update: $(date)" >> README.md
+          fi
 
       - name: Commit & push
         run: |
