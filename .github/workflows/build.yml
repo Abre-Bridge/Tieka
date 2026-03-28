@@ -14,35 +14,23 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      # ─────────────────────────────────────────
-      # 1. CHECKOUT
-      # ─────────────────────────────────────────
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # ─────────────────────────────────────────
-      # 2. JAVA — RN 0.76 + Expo 54 needs JDK 17
-      # ─────────────────────────────────────────
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: "17"
           distribution: "temurin"
 
-      # ─────────────────────────────────────────
-      # 3. NODE
-      # ─────────────────────────────────────────
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      # ─────────────────────────────────────────
-      # 4. CACHE GRADLE
-      # ─────────────────────────────────────────
       - name: Cache Gradle
         uses: actions/cache@v4
         with:
@@ -52,47 +40,32 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('**/gradle-wrapper.properties') }}
           restore-keys: gradle-${{ runner.os }}-
 
-      # ─────────────────────────────────────────
-      # 5. INSTALL EXPO CLI
-      # ─────────────────────────────────────────
       - name: Install Expo CLI
         run: npm install -g expo-cli @expo/cli
 
-      # ─────────────────────────────────────────
-      # 6. INSTALL DEPENDENCIES
-      # ─────────────────────────────────────────
       - name: Install dependencies
         run: npm install
 
-      # ─────────────────────────────────────────
-      # 7. CREATE .env FILE
-      # Appwrite + any other secrets your app needs
-      # Add these in GitHub Settings → Secrets
-      # ─────────────────────────────────────────
       - name: Create .env file
         run: |
           touch .env
-          [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}" ] && \
-            echo "EXPO_PUBLIC_APPWRITE_ENDPOINT=${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}" >> .env || true
-          [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}" ] && \
-            echo "EXPO_PUBLIC_APPWRITE_PROJECT_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}" >> .env || true
-          [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}" ] && \
-            echo "EXPO_PUBLIC_APPWRITE_DATABASE_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}" >> .env || true
-          [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}" ] && \
-            echo "EXPO_PUBLIC_APPWRITE_COLLECTION_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}" >> .env || true
-          echo ".env created with available secrets"
-          # Always ensure .env exists even if no secrets — dotenv won't crash
+          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}" ]; then
+            echo "EXPO_PUBLIC_APPWRITE_ENDPOINT=${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}" >> .env
+          fi
+          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}" ]; then
+            echo "EXPO_PUBLIC_APPWRITE_PROJECT_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}" >> .env
+          fi
+          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}" ]; then
+            echo "EXPO_PUBLIC_APPWRITE_DATABASE_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}" >> .env
+          fi
+          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}" ]; then
+            echo "EXPO_PUBLIC_APPWRITE_COLLECTION_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}" >> .env
+          fi
           echo "# build env" >> .env
+          echo ".env created."
 
-      # ─────────────────────────────────────────
-      # 8. VERIFY FONT FILES EXIST
-      # app.json declares 6 Rubik fonts —
-      # if any are missing the build dies exactly
-      # like your last project's Inter-Regular.ttf
-      # ─────────────────────────────────────────
-      - name: Verify Rubik fonts exist
+      - name: Verify and fix Rubik fonts
         run: |
-          MISSING=0
           FONTS=(
             "assets/fonts/Rubik-Bold.ttf"
             "assets/fonts/Rubik-ExtraBold.ttf"
@@ -101,15 +74,116 @@ jobs:
             "assets/fonts/Rubik-Regular.ttf"
             "assets/fonts/Rubik-SemiBold.ttf"
           )
+          mkdir -p assets/fonts
           for font in "${FONTS[@]}"; do
             if [ -f "$font" ]; then
-              echo "✅ $font"
+              echo "OK: $font"
             else
-              echo "❌ MISSING: $font — downloading from Google Fonts..."
-              mkdir -p assets/fonts
-              # Download the Rubik variable font as a valid TTF substitute
-              curl -sL "https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf" \
-                -o "$font" && echo "   → downloaded placeholder" || \
-              # Fallback to system font
-              cp /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf "$font" && \
-                echo "   → used DejaVu fallback"
+              echo "MISSING: $font - fetching substitute..."
+              if curl -sL --max-time 10 "https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf" -o "$font"; then
+                echo "Downloaded: $font"
+              elif cp /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf "$font"; then
+                echo "Used DejaVu fallback: $font"
+              else
+                echo "All fallbacks failed for: $font"
+                exit 1
+              fi
+            fi
+          done
+          echo "Font check complete."
+
+      - name: Verify and fix image assets
+        run: |
+          IMAGES=(
+            "assets/images/icon.png"
+            "assets/images/splash-icon.png"
+            "assets/images/favicon.png"
+          )
+          mkdir -p assets/images
+          for img in "${IMAGES[@]}"; do
+            if [ -f "$img" ]; then
+              echo "OK: $img"
+            else
+              echo "MISSING: $img - creating placeholder..."
+              printf '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc\xf8\x0f\x00\x00\x01\x01\x00\x05\x18\xd8N\x00\x00\x00\x00IEND\xaeB`\x82' > "$img"
+              echo "Placeholder created: $img"
+            fi
+          done
+          echo "Image check complete."
+
+      - name: Expo prebuild
+        run: npx expo prebuild --platform android --clean --no-install
+        env:
+          EXPO_NO_TELEMETRY: 1
+
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+
+      - name: Write google-services.json
+        run: |
+          if [ -n "$GSVC" ]; then
+            echo "$GSVC" > android/app/google-services.json
+            echo "google-services.json written."
+          else
+            echo "No GOOGLE_SERVICES_JSON secret - skipping."
+          fi
+        env:
+          GSVC: ${{ secrets.GOOGLE_SERVICES_JSON }}
+
+      - name: Decode keystore
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 --decode > android/app/keystore.jks
+            cat <<EOF > android/key.properties
+          storePassword=${{ secrets.STORE_PASSWORD }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          storeFile=keystore.jks
+          EOF
+            echo "Keystore ready."
+          else
+            echo "No keystore - unsigned build."
+          fi
+        env:
+          KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
+
+      - name: Build debug APK
+        run: |
+          cd android
+          ./gradlew assembleDebug \
+            --no-daemon \
+            --warning-mode=none \
+            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+        env:
+          EXPO_NO_TELEMETRY: 1
+
+      - name: Build release APK
+        run: |
+          cd android
+          ./gradlew assembleRelease \
+            --no-daemon \
+            --warning-mode=none \
+            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+        env:
+          EXPO_NO_TELEMETRY: 1
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: tieka-debug-${{ github.sha }}
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
+
+      - name: Upload release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: tieka-release-${{ github.sha }}
+          path: android/app/build/outputs/apk/release/app-release.apk
+          retention-days: 30
+
+      - name: Report APK sizes
+        run: |
+          echo "──────────────────────────────"
+          find android/app/build/outputs/apk -name "*.apk" \
+            -exec sh -c 'echo "$(basename {}) — $(du -sh {} | cut -f1)"' \;
+          echo "──────────────────────────────"
