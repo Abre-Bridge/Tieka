@@ -89,4 +89,115 @@ jobs:
             fi
           done
 
-      - name:
+      - name: Verify and fix image assets
+        run: |
+          IMAGES=(
+            "assets/images/icon.png"
+            "assets/images/splash-icon.png"
+            "assets/images/favicon.png"
+          )
+          mkdir -p assets/images
+          for img in "${IMAGES[@]}"; do
+            if [ -f "$img" ]; then
+              echo "OK: $img"
+            else
+              echo "MISSING: $img - creating placeholder..."
+              printf '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc\xf8\x0f\x00\x00\x01\x01\x00\x05\x18\xd8N\x00\x00\x00\x00IEND\xaeB`\x82' > "$img"
+            fi
+          done
+
+      - name: Expo prebuild
+        run: npx expo prebuild --platform android --clean --no-install
+        env:
+          EXPO_NO_TELEMETRY: 1
+
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+
+      - name: Force Gradle 8.10.2 after prebuild
+        shell: bash
+        run: |
+          WRAPPER="android/gradle/wrapper/gradle-wrapper.properties"
+          echo "Before:"
+          cat "$WRAPPER"
+          sed -i 's|https://services.gradle.org/distributions/gradle-.*-bin.zip|https://services.gradle.org/distributions/gradle-8.10.2-bin.zip|g' "$WRAPPER"
+          echo "After:"
+          cat "$WRAPPER"
+          if grep -q "8.10.2" "$WRAPPER"; then
+            echo "Gradle pinned to 8.10.2 successfully."
+          else
+            echo "ERROR: Gradle pin failed!"
+            exit 1
+          fi
+
+      - name: Write google-services.json
+        run: |
+          if [ -n "$GSVC" ]; then
+            echo "$GSVC" > android/app/google-services.json
+            echo "google-services.json written."
+          else
+            echo "No GOOGLE_SERVICES_JSON secret - skipping."
+          fi
+        env:
+          GSVC: ${{ secrets.GOOGLE_SERVICES_JSON }}
+
+      - name: Decode keystore
+        shell: bash
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 --decode > android/app/keystore.jks
+            {
+              echo "storePassword=${{ secrets.STORE_PASSWORD }}"
+              echo "keyPassword=${{ secrets.KEY_PASSWORD }}"
+              echo "keyAlias=${{ secrets.KEY_ALIAS }}"
+              echo "storeFile=keystore.jks"
+            } > android/key.properties
+            echo "Keystore ready."
+          else
+            echo "No keystore - unsigned build."
+          fi
+        env:
+          KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
+
+      - name: Build debug APK
+        shell: bash
+        run: |
+          cd android
+          ./gradlew assembleDebug \
+            --no-daemon \
+            --stacktrace \
+            --warning-mode=none \
+            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+        env:
+          EXPO_NO_TELEMETRY: 1
+
+      - name: Build release APK
+        shell: bash
+        run: |
+          cd android
+          ./gradlew assembleRelease \
+            --no-daemon \
+            --stacktrace \
+            --warning-mode=none \
+            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+        env:
+          EXPO_NO_TELEMETRY: 1
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: tieka-debug-${{ github.sha }}
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
+
+      - name: Upload release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: tieka-release-${{ github.sha }}
+          path: android/app/build/outputs/apk/release/app-release.apk
+          retention-days: 30
+
+      - name: Report APK sizes
+        run: |
+          find android/app/build/outputs/apk -name "*.apk" \
+            -exec sh -c 'echo "$(basename {}) — $(du -sh {} | cut -f1)"' \;
