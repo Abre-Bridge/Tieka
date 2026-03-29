@@ -113,19 +113,35 @@ jobs:
 
       # ── Optional secrets ─────────────────────────────────────────────────────
       - name: Write google-services.json
-        if: ${{ secrets.GOOGLE_SERVICES_JSON != '' }}
-        run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > android/app/google-services.json
+        env:
+          GSVC: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if [ -n "$GSVC" ]; then
+            echo "$GSVC" > android/app/google-services.json
+            echo "google-services.json written."
+          else
+            echo "No GOOGLE_SERVICES_JSON secret — skipping."
+          fi
 
       - name: Decode keystore
-        if: ${{ secrets.KEYSTORE_BASE64 != '' }}
+        env:
+          KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/keystore.jks
-          cat > android/key.properties <<EOF
-          storePassword=${{ secrets.STORE_PASSWORD }}
-          keyPassword=${{ secrets.KEY_PASSWORD }}
-          keyAlias=${{ secrets.KEY_ALIAS }}
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 --decode > android/app/keystore.jks
+            cat > android/key.properties <<EOF
+          storePassword=$STORE_PASSWORD
+          keyPassword=$KEY_PASSWORD
+          keyAlias=$KEY_ALIAS
           storeFile=keystore.jks
           EOF
+            echo "Keystore ready."
+          else
+            echo "No keystore secret — unsigned build."
+          fi
 
       # ── Build ────────────────────────────────────────────────────────────────
       - name: Build debug APK
