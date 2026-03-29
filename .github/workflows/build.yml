@@ -14,155 +14,123 @@ jobs:
     timeout-minutes: 60
 
     steps:
+      # ── Checkout ────────────────────────────────────────────────────────────
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # ── Toolchain ───────────────────────────────────────────────────────────
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: "17"
           distribution: "temurin"
 
-      - name: Set up Node.js
+      - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
+      # ── Dependency caches ───────────────────────────────────────────────────
       - name: Cache Gradle
         uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: gradle-${{ runner.os }}-8.10.2
-          restore-keys: gradle-${{ runner.os }}-
+          key: gradle-${{ runner.os }}-8.10.2-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: gradle-${{ runner.os }}-8.10.2-
 
+      # ── Node dependencies ───────────────────────────────────────────────────
       - name: Install Expo CLI
-        run: npm install -g expo-cli @expo/cli
+        run: npm install -g @expo/cli
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install project dependencies
+        run: npm ci
 
+      # ── Environment ─────────────────────────────────────────────────────────
       - name: Create .env file
         run: |
-          touch .env
-          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}" ]; then
-            echo "EXPO_PUBLIC_APPWRITE_ENDPOINT=${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}" >> .env
-          fi
-          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}" ]; then
-            echo "EXPO_PUBLIC_APPWRITE_PROJECT_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}" >> .env
-          fi
-          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}" ]; then
-            echo "EXPO_PUBLIC_APPWRITE_DATABASE_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}" >> .env
-          fi
-          if [ -n "${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}" ]; then
-            echo "EXPO_PUBLIC_APPWRITE_COLLECTION_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}" >> .env
-          fi
-          echo "# build env" >> .env
+          {
+            echo "EXPO_PUBLIC_APPWRITE_ENDPOINT=${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}"
+            echo "EXPO_PUBLIC_APPWRITE_PROJECT_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}"
+            echo "EXPO_PUBLIC_APPWRITE_DATABASE_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}"
+            echo "EXPO_PUBLIC_APPWRITE_COLLECTION_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}"
+          } > .env
 
-      - name: Verify and fix Rubik fonts
+      # ── Assets ──────────────────────────────────────────────────────────────
+      - name: Ensure font assets exist
         run: |
-          FONTS=(
-            "assets/fonts/Rubik-Bold.ttf"
-            "assets/fonts/Rubik-ExtraBold.ttf"
-            "assets/fonts/Rubik-Light.ttf"
-            "assets/fonts/Rubik-Medium.ttf"
-            "assets/fonts/Rubik-Regular.ttf"
-            "assets/fonts/Rubik-SemiBold.ttf"
-          )
           mkdir -p assets/fonts
-          for font in "${FONTS[@]}"; do
-            if [ -f "$font" ]; then
-              echo "OK: $font"
-            else
-              echo "MISSING: $font - fetching substitute..."
-              if curl -sL --max-time 15 "https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf" -o "$font"; then
-                echo "Downloaded: $font"
-              elif cp /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf "$font"; then
-                echo "Used DejaVu fallback: $font"
-              else
-                exit 1
-              fi
+          RUBIK_URL="https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf"
+          FALLBACK="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+          for variant in Bold ExtraBold Light Medium Regular SemiBold; do
+            dest="assets/fonts/Rubik-${variant}.ttf"
+            if [ ! -f "$dest" ]; then
+              echo "Missing $dest — downloading substitute"
+              curl -sL --max-time 15 "$RUBIK_URL" -o "$dest" \
+                || cp "$FALLBACK" "$dest" \
+                || { echo "ERROR: could not provide $dest"; exit 1; }
             fi
           done
 
-      - name: Verify and fix image assets
+      - name: Ensure image assets exist
         run: |
-          IMAGES=(
-            "assets/images/icon.png"
-            "assets/images/splash-icon.png"
-            "assets/images/favicon.png"
-          )
           mkdir -p assets/images
-          for img in "${IMAGES[@]}"; do
-            if [ -f "$img" ]; then
-              echo "OK: $img"
-            else
-              echo "MISSING: $img - creating placeholder..."
-              printf '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc\xf8\x0f\x00\x00\x01\x01\x00\x05\x18\xd8N\x00\x00\x00\x00IEND\xaeB`\x82' > "$img"
-            fi
+          # Minimal 1×1 transparent PNG (base64)
+          PLACEHOLDER=$(printf '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc\xf8\x0f\x00\x00\x01\x01\x00\x05\x18\xd8N\x00\x00\x00\x00IEND\xaeB`\x82')
+          for img in icon.png splash-icon.png favicon.png; do
+            dest="assets/images/$img"
+            [ -f "$dest" ] || { echo "Creating placeholder: $dest"; printf '%s' "$PLACEHOLDER" > "$dest"; }
           done
 
-      - name: Expo prebuild
+      # ── Expo prebuild ────────────────────────────────────────────────────────
+      - name: Expo prebuild (Android)
         run: npx expo prebuild --platform android --clean --no-install
         env:
           EXPO_NO_TELEMETRY: 1
 
-      - name: Make gradlew executable
-        run: chmod +x android/gradlew
-
-      - name: Force Gradle 8.10.2 after prebuild
-        shell: bash
+      # ── Gradle setup ────────────────────────────────────────────────────────
+      - name: Pin Gradle to 8.10.2
         run: |
           WRAPPER="android/gradle/wrapper/gradle-wrapper.properties"
-          echo "Before:"
-          cat "$WRAPPER"
-          sed -i 's|https://services.gradle.org/distributions/gradle-.*-bin.zip|https://services.gradle.org/distributions/gradle-8.10.2-bin.zip|g' "$WRAPPER"
-          echo "After:"
-          cat "$WRAPPER"
-          if grep -q "8.10.2" "$WRAPPER"; then
-            echo "Gradle pinned to 8.10.2 successfully."
-          else
-            echo "ERROR: Gradle pin failed!"
-            exit 1
-          fi
+          # Overwrite the entire file so no sed escaping issues arise
+          cat > "$WRAPPER" <<'EOF'
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.10.2-bin.zip
+          networkTimeout=10000
+          validateDistributionUrl=true
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          EOF
+          chmod +x android/gradlew
+          grep -q "8.10.2" "$WRAPPER" \
+            && echo "Gradle pinned to 8.10.2" \
+            || { echo "ERROR: Gradle pin failed"; exit 1; }
 
+      # ── Optional secrets ─────────────────────────────────────────────────────
       - name: Write google-services.json
-        run: |
-          if [ -n "$GSVC" ]; then
-            echo "$GSVC" > android/app/google-services.json
-            echo "google-services.json written."
-          else
-            echo "No GOOGLE_SERVICES_JSON secret - skipping."
-          fi
-        env:
-          GSVC: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        if: ${{ secrets.GOOGLE_SERVICES_JSON != '' }}
+        run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > android/app/google-services.json
 
       - name: Decode keystore
-        shell: bash
+        if: ${{ secrets.KEYSTORE_BASE64 != '' }}
         run: |
-          if [ -n "$KS_B64" ]; then
-            echo "$KS_B64" | base64 --decode > android/app/keystore.jks
-            {
-              echo "storePassword=${{ secrets.STORE_PASSWORD }}"
-              echo "keyPassword=${{ secrets.KEY_PASSWORD }}"
-              echo "keyAlias=${{ secrets.KEY_ALIAS }}"
-              echo "storeFile=keystore.jks"
-            } > android/key.properties
-            echo "Keystore ready."
-          else
-            echo "No keystore - unsigned build."
-          fi
-        env:
-          KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/keystore.jks
+          cat > android/key.properties <<EOF
+          storePassword=${{ secrets.STORE_PASSWORD }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          storeFile=keystore.jks
+          EOF
 
+      # ── Build ────────────────────────────────────────────────────────────────
       - name: Build debug APK
-        shell: bash
+        working-directory: android
         run: |
-          cd android
           ./gradlew assembleDebug \
             --no-daemon \
             --stacktrace \
@@ -172,9 +140,8 @@ jobs:
           EXPO_NO_TELEMETRY: 1
 
       - name: Build release APK
-        shell: bash
+        working-directory: android
         run: |
-          cd android
           ./gradlew assembleRelease \
             --no-daemon \
             --stacktrace \
@@ -183,6 +150,7 @@ jobs:
         env:
           EXPO_NO_TELEMETRY: 1
 
+      # ── Artifacts ────────────────────────────────────────────────────────────
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
