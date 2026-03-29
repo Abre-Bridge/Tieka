@@ -79,7 +79,6 @@ jobs:
       - name: Ensure image assets exist
         run: |
           mkdir -p assets/images
-          # Minimal 1×1 transparent PNG (base64)
           PLACEHOLDER=$(printf '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc\xf8\x0f\x00\x00\x01\x01\x00\x05\x18\xd8N\x00\x00\x00\x00IEND\xaeB`\x82')
           for img in icon.png splash-icon.png favicon.png; do
             dest="assets/images/$img"
@@ -92,32 +91,26 @@ jobs:
         env:
           EXPO_NO_TELEMETRY: 1
 
-      # ── Gradle setup ────────────────────────────────────────────────────────
+      # ── Gradle / Kotlin setup ────────────────────────────────────────────────
       - name: Pin Gradle to 8.10.2
         run: |
           WRAPPER="android/gradle/wrapper/gradle-wrapper.properties"
-          # Overwrite the entire file so no sed escaping issues arise
-          cat > "$WRAPPER" <<'EOF'
-          distributionBase=GRADLE_USER_HOME
-          distributionPath=wrapper/dists
-          distributionUrl=https\://services.gradle.org/distributions/gradle-8.10.2-bin.zip
-          networkTimeout=10000
-          validateDistributionUrl=true
-          zipStoreBase=GRADLE_USER_HOME
-          zipStorePath=wrapper/dists
-          EOF
+          printf 'distributionBase=GRADLE_USER_HOME\ndistributionPath=wrapper/dists\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.10.2-bin.zip\nnetworkTimeout=10000\nvalidateDistributionUrl=true\nzipStoreBase=GRADLE_USER_HOME\nzipStorePath=wrapper/dists\n' > "$WRAPPER"
           chmod +x android/gradlew
           grep -q "8.10.2" "$WRAPPER" \
             && echo "Gradle pinned to 8.10.2" \
             || { echo "ERROR: Gradle pin failed"; exit 1; }
 
-      - name: Pin Kotlin to 2.1.0
+      - name: Inject Gradle init script to force Kotlin 2.1.0
         run: |
-          BUILD="android/build.gradle"
-          sed -i "s/kotlinVersion\s*=\s*[\"'][^\"']*[\"']/kotlinVersion = \"2.1.0\"/g" "$BUILD"
-          sed -i "s/kotlinVersion\s*=\s*[0-9][0-9.]*/kotlinVersion = \"2.1.0\"/g" "$BUILD"
-          echo "--- kotlinVersion in android/build.gradle ---"
-          grep "kotlinVersion" "$BUILD" || echo "(not found — may be set elsewhere)"
+          # Gradle init scripts run before any project build.gradle is evaluated.
+          # expo-root-project reads ext.kotlinVersion from the root project — setting
+          # it here in beforeEvaluate wins over whatever prebuild wrote into build.gradle.
+          mkdir -p ~/.gradle/init.d
+          printf 'allprojects {\n    beforeEvaluate {\n        ext.kotlinVersion = "2.1.0"\n    }\n}\n' \
+            > ~/.gradle/init.d/force-kotlin.gradle
+          echo "Init script written to ~/.gradle/init.d/force-kotlin.gradle:"
+          cat ~/.gradle/init.d/force-kotlin.gradle
 
       # ── Optional secrets ─────────────────────────────────────────────────────
       - name: Write google-services.json
@@ -140,12 +133,8 @@ jobs:
         run: |
           if [ -n "$KS_B64" ]; then
             echo "$KS_B64" | base64 --decode > android/app/keystore.jks
-            cat > android/key.properties <<EOF
-          storePassword=$STORE_PASSWORD
-          keyPassword=$KEY_PASSWORD
-          keyAlias=$KEY_ALIAS
-          storeFile=keystore.jks
-          EOF
+            printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=keystore.jks\n' \
+              "$STORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
             echo "Keystore ready."
           else
             echo "No keystore secret — unsigned build."
