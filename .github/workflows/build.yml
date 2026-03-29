@@ -2,128 +2,104 @@ name: Tieka Android Build
 
 on:
   push:
-    branches: [main, master, develop]
+    branches: [master, main, develop]
   pull_request:
-    branches: [main, master]
+    branches: [master, main]
   workflow_dispatch:
 
 jobs:
-  build-android:
+  build:
     name: Build Android APK
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
 
     steps:
-      # ── Checkout ────────────────────────────────────────────────────────────
-      - name: Checkout repository
+      # ── Checkout ─────────────────────────────────────────────────────────────
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      # ── Toolchain ───────────────────────────────────────────────────────────
+      # ── Toolchain ─────────────────────────────────────────────────────────────
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: "17"
           distribution: "temurin"
 
-      - name: Set up Node.js 20
+      - name: Set up Node 20
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      # ── Dependency caches ───────────────────────────────────────────────────
+      # ── Caches ───────────────────────────────────────────────────────────────
       - name: Cache Gradle
         uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: gradle-${{ runner.os }}-8.10.2-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: gradle-${{ runner.os }}-8.10.2-
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/gradle-wrapper.properties') }}
+          restore-keys: gradle-${{ runner.os }}-
 
-      # ── Node dependencies ───────────────────────────────────────────────────
+      # ── JS deps ───────────────────────────────────────────────────────────────
+      - name: Install dependencies
+        run: npm ci
+
       - name: Install Expo CLI
         run: npm install -g @expo/cli
 
-      - name: Install project dependencies
-        run: npm ci
-
-      # ── Environment ─────────────────────────────────────────────────────────
-      - name: Create .env file
-        run: |
-          {
-            echo "EXPO_PUBLIC_APPWRITE_ENDPOINT=${{ secrets.EXPO_PUBLIC_APPWRITE_ENDPOINT }}"
-            echo "EXPO_PUBLIC_APPWRITE_PROJECT_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_PROJECT_ID }}"
-            echo "EXPO_PUBLIC_APPWRITE_DATABASE_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_DATABASE_ID }}"
-            echo "EXPO_PUBLIC_APPWRITE_COLLECTION_ID=${{ secrets.EXPO_PUBLIC_APPWRITE_COLLECTION_ID }}"
-          } > .env
-
-      # ── Assets ──────────────────────────────────────────────────────────────
-      - name: Ensure font assets exist
-        run: |
-          mkdir -p assets/fonts
-          RUBIK_URL="https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf"
-          FALLBACK="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-          for variant in Bold ExtraBold Light Medium Regular SemiBold; do
-            dest="assets/fonts/Rubik-${variant}.ttf"
-            if [ ! -f "$dest" ]; then
-              echo "Missing $dest — downloading substitute"
-              curl -sL --max-time 15 "$RUBIK_URL" -o "$dest" \
-                || cp "$FALLBACK" "$dest" \
-                || { echo "ERROR: could not provide $dest"; exit 1; }
-            fi
-          done
-
-      - name: Ensure image assets exist
-        run: |
-          mkdir -p assets/images
-          PLACEHOLDER=$(printf '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0cIDATx\x9cc\xf8\x0f\x00\x00\x01\x01\x00\x05\x18\xd8N\x00\x00\x00\x00IEND\xaeB`\x82')
-          for img in icon.png splash-icon.png favicon.png; do
-            dest="assets/images/$img"
-            [ -f "$dest" ] || { echo "Creating placeholder: $dest"; printf '%s' "$PLACEHOLDER" > "$dest"; }
-          done
-
-      # ── Expo prebuild ────────────────────────────────────────────────────────
-      - name: Expo prebuild (Android)
+      # ── Expo prebuild ─────────────────────────────────────────────────────────
+      # .env is already in the repo so no secrets needed for env vars.
+      # newArchEnabled=true + native modules = development build required (not Expo Go).
+      - name: Expo prebuild
         run: npx expo prebuild --platform android --clean --no-install
         env:
           EXPO_NO_TELEMETRY: 1
 
-      # ── Gradle / Kotlin setup ────────────────────────────────────────────────
-      - name: Pin Gradle to 8.10.2
+      # ── Fix 1: Pin Gradle wrapper to 8.10.2 ──────────────────────────────────
+      # expo prebuild on SDK 54 writes gradle-8.14.x which breaks other things.
+      - name: Pin Gradle wrapper to 8.10.2
         run: |
           WRAPPER="android/gradle/wrapper/gradle-wrapper.properties"
-          printf 'distributionBase=GRADLE_USER_HOME\ndistributionPath=wrapper/dists\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.10.2-bin.zip\nnetworkTimeout=10000\nvalidateDistributionUrl=true\nzipStoreBase=GRADLE_USER_HOME\nzipStorePath=wrapper/dists\n' > "$WRAPPER"
+          printf '%s\n' \
+            'distributionBase=GRADLE_USER_HOME' \
+            'distributionPath=wrapper/dists' \
+            'distributionUrl=https\://services.gradle.org/distributions/gradle-8.10.2-bin.zip' \
+            'networkTimeout=10000' \
+            'validateDistributionUrl=true' \
+            'zipStoreBase=GRADLE_USER_HOME' \
+            'zipStorePath=wrapper/dists' \
+            > "$WRAPPER"
           chmod +x android/gradlew
-          grep -q "8.10.2" "$WRAPPER" \
-            && echo "Gradle pinned to 8.10.2" \
-            || { echo "ERROR: Gradle pin failed"; exit 1; }
+          grep -q "8.10.2" "$WRAPPER" && echo "OK: Gradle 8.10.2 pinned" || { echo "FAIL"; exit 1; }
 
-      - name: Inject Gradle init script to force Kotlin 2.1.0
+      # ── Fix 2: Force Kotlin 2.1.0 via gradle.properties ──────────────────────
+      # expo-modules-core (SDK 54) ships a KSP compatibility map that only knows
+      # Kotlin 2.x.  The version is resolved from the kotlin_version property in
+      # android/gradle.properties — this is the earliest, most reliable injection
+      # point, before any plugin or build script evaluates.
+      - name: Force Kotlin 2.1.0 in gradle.properties
         run: |
-          # Gradle init scripts run before any project build.gradle is evaluated.
-          # expo-root-project reads ext.kotlinVersion from the root project — setting
-          # it here in beforeEvaluate wins over whatever prebuild wrote into build.gradle.
+          PROPS="android/gradle.properties"
+          # Remove any existing kotlin_version line, then append the correct one
+          grep -v "^kotlin_version" "$PROPS" > /tmp/gradle.properties.tmp
+          echo 'kotlin_version=2.1.0' >> /tmp/gradle.properties.tmp
+          mv /tmp/gradle.properties.tmp "$PROPS"
+          echo "--- gradle.properties (kotlin lines) ---"
+          grep -i kotlin "$PROPS"
+
+      # ── Fix 3: Gradle init script as belt-and-suspenders ─────────────────────
+      # Also set ext.kotlinVersion so expo-root-project's beforeEvaluate hook
+      # sees the right value even if it ignores gradle.properties.
+      - name: Write Gradle init script
+        run: |
           mkdir -p ~/.gradle/init.d
-          printf 'allprojects {\n    beforeEvaluate {\n        ext.kotlinVersion = "2.1.0"\n    }\n}\n' \
+          printf 'allprojects {\n    beforeEvaluate { project ->\n        project.ext["kotlinVersion"] = "2.1.0"\n        project.ext["kotlin_version"] = "2.1.0"\n    }\n}\n' \
             > ~/.gradle/init.d/force-kotlin.gradle
-          echo "Init script written to ~/.gradle/init.d/force-kotlin.gradle:"
+          echo "Init script:"
           cat ~/.gradle/init.d/force-kotlin.gradle
 
-      # ── Optional secrets ─────────────────────────────────────────────────────
-      - name: Write google-services.json
-        env:
-          GSVC: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: |
-          if [ -n "$GSVC" ]; then
-            echo "$GSVC" > android/app/google-services.json
-            echo "google-services.json written."
-          else
-            echo "No GOOGLE_SERVICES_JSON secret — skipping."
-          fi
-
+      # ── Optional: signing ─────────────────────────────────────────────────────
       - name: Decode keystore
         env:
           KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
@@ -134,13 +110,14 @@ jobs:
           if [ -n "$KS_B64" ]; then
             echo "$KS_B64" | base64 --decode > android/app/keystore.jks
             printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=keystore.jks\n' \
-              "$STORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
-            echo "Keystore ready."
+              "$STORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" \
+              > android/key.properties
+            echo "Keystore configured."
           else
-            echo "No keystore secret — unsigned build."
+            echo "No keystore — debug-only build."
           fi
 
-      # ── Build ────────────────────────────────────────────────────────────────
+      # ── Build ─────────────────────────────────────────────────────────────────
       - name: Build debug APK
         working-directory: android
         run: |
@@ -148,7 +125,8 @@ jobs:
             --no-daemon \
             --stacktrace \
             --warning-mode=none \
-            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m" \
+            -Pkotlin_version=2.1.0
         env:
           EXPO_NO_TELEMETRY: 1
 
@@ -159,13 +137,15 @@ jobs:
             --no-daemon \
             --stacktrace \
             --warning-mode=none \
-            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+            -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m" \
+            -Pkotlin_version=2.1.0
         env:
           EXPO_NO_TELEMETRY: 1
 
-      # ── Artifacts ────────────────────────────────────────────────────────────
+      # ── Upload ────────────────────────────────────────────────────────────────
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: tieka-debug-${{ github.sha }}
           path: android/app/build/outputs/apk/debug/app-debug.apk
@@ -178,7 +158,9 @@ jobs:
           path: android/app/build/outputs/apk/release/app-release.apk
           retention-days: 30
 
-      - name: Report APK sizes
+      - name: APK sizes
+        if: always()
         run: |
-          find android/app/build/outputs/apk -name "*.apk" \
-            -exec sh -c 'echo "$(basename {}) — $(du -sh {} | cut -f1)"' \;
+          find android/app/build/outputs/apk -name "*.apk" 2>/dev/null \
+            | while read f; do echo "$(basename $f) — $(du -sh $f | cut -f1)"; done \
+            || echo "No APKs found"
