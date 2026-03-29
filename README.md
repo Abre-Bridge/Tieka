@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "To achieve, you need thought. You have to know what you are doing and that's real power." — Ayn Rand
+> "The only limits in our life are those we impose on ourselves." — Bob Proctor
 
-Last update: 2026-03-28 20:29 UTC
+Last update: 2026-03-29 02:24 UTC
