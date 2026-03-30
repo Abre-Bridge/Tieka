@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Because of your smile, you make life more beautiful." — Thich Nhat Hanh
+> "The more you take responsibility for your past and present, the more you are able to create the future you seek." — Celestine Chua
 
-Last update: 2026-03-29 16:22 UTC
+Last update: 2026-03-30 01:17 UTC
