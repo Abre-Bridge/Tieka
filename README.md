@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The more you take responsibility for your past and present, the more you are able to create the future you seek." — Celestine Chua
+> "If you try to micromanage yourself all you're going to do is make yourself miserable." — Naval Ravikant
 
-Last update: 2026-03-30 01:17 UTC
+Last update: 2026-03-30 09:02 UTC
