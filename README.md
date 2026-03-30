@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If you try to micromanage yourself all you're going to do is make yourself miserable." — Naval Ravikant
+> "It doesn't matter where you are, you are nowhere compared to where you can go." — Bob Proctor
 
-Last update: 2026-03-30 09:02 UTC
+Last update: 2026-03-30 16:44 UTC
