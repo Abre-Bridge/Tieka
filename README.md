@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It doesn't matter where you are, you are nowhere compared to where you can go." — Bob Proctor
+> "Courage is resistance to fear, mastery of fear - not absence of fear." — Mark Twain
 
-Last update: 2026-03-30 16:44 UTC
+Last update: 2026-03-31 01:15 UTC
