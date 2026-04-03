@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Attitude drives actions. Actions drive results. Results drive lifestyles." — Jim Rohn
+> "To know your Enemy, you must become your Enemy." — Sun Tzu
 
-Last update: 2026-04-03 08:40 UTC
+Last update: 2026-04-03 16:27 UTC
