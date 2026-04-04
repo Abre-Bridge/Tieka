@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "To know your Enemy, you must become your Enemy." — Sun Tzu
+> "There is no one giant step that does it. It's a lot of little steps." — Peter A. Cohen
 
-Last update: 2026-04-03 16:27 UTC
+Last update: 2026-04-04 01:08 UTC
