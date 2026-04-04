@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "There is no one giant step that does it. It's a lot of little steps." — Peter A. Cohen
+> "If you don't find the time, if you don't do the work, you don't get the results." — Arnold Schwarzenegger
 
-Last update: 2026-04-04 01:08 UTC
+Last update: 2026-04-04 08:28 UTC
