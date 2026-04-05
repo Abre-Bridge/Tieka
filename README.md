@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Take care of your cents: dollars will take care of themselves." — Thomas Jefferson
+> "If you want to achieve anything in this world, you have to get used to the idea that not everyone will like you." — Simon Sinek
 
-Last update: 2026-04-04 16:21 UTC
+Last update: 2026-04-05 01:17 UTC
