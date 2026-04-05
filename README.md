@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If you want to achieve anything in this world, you have to get used to the idea that not everyone will like you." — Simon Sinek
+> "Either you choose to stay in the shallow end of the pool or you go out into the ocean." — Christopher Reeve
 
-Last update: 2026-04-05 01:17 UTC
+Last update: 2026-04-05 08:31 UTC
