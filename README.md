@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Do it with passion, or not at all." — Rosa Nouchette Carey
+> "Success is about doing the right thing, not about doing everything right." — Gary Keller
 
-Last update: 2026-04-08 16:50 UTC
+Last update: 2026-04-08 20:40 UTC
