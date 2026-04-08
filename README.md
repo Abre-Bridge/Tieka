@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Awakening is possible only for those who seek it and want it." — G.I. Gurdjieff
+> "Do it with passion, or not at all." — Rosa Nouchette Carey
 
-Last update: 2026-04-08 08:50 UTC
+Last update: 2026-04-08 16:50 UTC
