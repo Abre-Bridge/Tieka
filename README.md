@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Confidence is what you have before you understand the problem." — Woody Allen
+> "Even if our home burns down we can rebuild it. But the things that we got for nothing, we can never replace." — Earl Nightingale
 
-Last update: 2026-04-11 12:53 UTC
+Last update: 2026-04-11 16:34 UTC
