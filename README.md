@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Each path to knowledge involves different rules and these rules are not interchangeable." — Barack Obama
+> "Always do what is right. It will gratify half of mankind and astound the other." — Mark Twain
 
-Last update: 2026-04-12 02:26 UTC
+Last update: 2026-04-12 05:53 UTC
