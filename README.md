@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The first principle of success is desire." — Robert Collier
+> "Obstacles can't stop you. Problems can't stop you. Most of all, other people can't stop you. Only you can stop you." — Jeffrey Gitomer
 
-Last update: 2026-04-12 12:57 UTC
+Last update: 2026-04-12 16:36 UTC
