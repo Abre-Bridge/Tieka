@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Always do what is right. It will gratify half of mankind and astound the other." — Mark Twain
+> "The measure of wisdom is how calm you are when facing any given situation." — Naval Ravikant
 
-Last update: 2026-04-12 05:53 UTC
+Last update: 2026-04-12 08:44 UTC
