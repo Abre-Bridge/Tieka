@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "No great mind has ever existed without a touch of madness." — Aristotle
+> "Observe things as they are and don't pay attention to other people." — Huang Po
 
-Last update: 2026-04-13 13:22 UTC
+Last update: 2026-04-13 17:02 UTC
