@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Life is much like going to the gym. The most painful part is deciding to go. Once you get past that, it's easy." — Robert Kiyosaki
+> "Death is not sad; the sad thing is that most people don't really live at all." — Dan Millman
 
-Last update: 2026-04-14 02:25 UTC
+Last update: 2026-04-14 05:59 UTC
