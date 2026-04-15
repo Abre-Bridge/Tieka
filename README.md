@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A liar knows that he is a liar, but one who speaks mere portions of truth in order to deceive is a craftsman of destruction." — Criss Jami
+> "Mistakes are always forgivable, if one has the courage to admit them. " — Bruce Lee
 
-Last update: 2026-04-15 02:14 UTC
+Last update: 2026-04-15 05:59 UTC
