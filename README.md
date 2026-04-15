@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Our happiness depends on the habit of mind we cultivate." — Norman Vincent Peale
+> "A liar knows that he is a liar, but one who speaks mere portions of truth in order to deceive is a craftsman of destruction." — Criss Jami
 
-Last update: 2026-04-14 20:51 UTC
+Last update: 2026-04-15 02:14 UTC
