@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "We have to walk in a way that we only print peace and serenity on the Earth. Walk as if you are kissing the Earth with your feet." — Thich Nhat Hanh
+> "Too many of us are not living our dreams because we are living our fears." — Les Brown
 
-Last update: 2026-04-15 20:44 UTC
+Last update: 2026-04-16 02:30 UTC
