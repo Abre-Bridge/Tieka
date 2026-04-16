@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "We must not cease from exploration. And the end of all our exploring will be to arrive where we began and to know the place for the first time." — T.S. Eliot
+> "Not doing it is certainly the best way to not getting it.  " — Wayne Gretzky
 
-Last update: 2026-04-16 06:00 UTC
+Last update: 2026-04-16 09:17 UTC
