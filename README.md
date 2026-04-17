@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A leader is one who knows the way, goes the way, and shows the way." — Unknown
+> "Muddy water is best cleared by leaving it alone." — Alan Watts
 
-Last update: 2026-04-17 13:15 UTC
+Last update: 2026-04-17 16:53 UTC
