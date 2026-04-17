@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Mastering others is strength, mastering yourself is true power." — Lao Tzu
+> "A leader is one who knows the way, goes the way, and shows the way." — Unknown
 
-Last update: 2026-04-17 09:15 UTC
+Last update: 2026-04-17 13:15 UTC
