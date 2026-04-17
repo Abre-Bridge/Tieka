@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Tragedy is a tool for the living to gain wisdom, not a guide by which to live." — Robert F. Kennedy
+> "Mastering others is strength, mastering yourself is true power." — Lao Tzu
 
-Last update: 2026-04-17 06:02 UTC
+Last update: 2026-04-17 09:15 UTC
