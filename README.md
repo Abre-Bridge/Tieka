@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Muddy water is best cleared by leaving it alone." — Alan Watts
+> "The strength of a wall is neither greater nor less than the courage of the men who defend it. " — Genghis Khan
 
-Last update: 2026-04-17 16:53 UTC
+Last update: 2026-04-17 20:41 UTC
