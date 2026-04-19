@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "I have lost friends, some by death...others by sheer inability to cross the street." — Virginia Woolf
+> "If you take responsibility for yourself you will develop a hunger to accomplish your dream." — Les Brown
 
-Last update: 2026-04-18 20:34 UTC
+Last update: 2026-04-19 02:31 UTC
