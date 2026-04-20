@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "When you rise in the morning, form a resolution to make the day a happy one for a fellow creature." — Sydney Smith
+> "The first step toward getting somewhere is to decide that you are not going to stay where you are." — Unknown
 
-Last update: 2026-04-20 17:02 UTC
+Last update: 2026-04-20 20:42 UTC
