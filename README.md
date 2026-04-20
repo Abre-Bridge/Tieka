@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Anger, ego, jealousy are the biggest diseases,Keep yourself aloof from these three diseases." — Sathya Sai Baba
+> "The weak can never forgive. Forgiveness is the attribute of the strong." — Mahatma Gandhi
 
-Last update: 2026-04-19 20:35 UTC
+Last update: 2026-04-20 02:31 UTC
