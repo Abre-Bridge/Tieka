@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Our deeds determine us, as much as we determine our deeds." — George Eliot
+> "The primary cause of unhappiness is never the situation but your thoughts about it." — Eckhart Tolle
 
-Last update: 2026-04-21 09:24 UTC
+Last update: 2026-04-21 13:22 UTC
