@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The first step toward getting somewhere is to decide that you are not going to stay where you are." — Unknown
+> "The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time." — Mark Twain
 
-Last update: 2026-04-20 20:42 UTC
+Last update: 2026-04-21 02:27 UTC
