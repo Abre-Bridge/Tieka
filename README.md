@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time." — Mark Twain
+> "There are no shortcuts to any place worth going." — Beverly Sills
 
-Last update: 2026-04-21 02:27 UTC
+Last update: 2026-04-21 06:01 UTC
