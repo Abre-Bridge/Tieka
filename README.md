@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "What we know is a drop, what we don't know is an ocean. " — Isaac Newton
+> "Letting go means to come to the realization that some people are a part of your history, but not a part of your destiny." — Steve Maraboli
 
-Last update: 2026-04-22 16:57 UTC
+Last update: 2026-04-22 20:53 UTC
