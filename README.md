@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The future is not a gift. It is an achievement." — Robert F. Kennedy
+> "The scariest monsters are the ones that lurk within our souls." — Edgar Allan Poe
 
-Last update: 2026-04-21 20:50 UTC
+Last update: 2026-04-22 02:25 UTC
