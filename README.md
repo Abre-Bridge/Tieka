@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Being In The Present Means Tuning Out Distractions And Paying Attention To What Is Important, Now." — Spencer Johnson
+> "The real meditation is how you live your life." — Jon Kabat-Zinn
 
-Last update: 2026-04-22 09:18 UTC
+Last update: 2026-04-22 13:23 UTC
