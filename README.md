@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A man's worth is no greater than his ambitions." — Marcus Aurelius
+> "If it entertains you now but will bore you someday, it's a distraction. Keep looking." — Naval Ravikant
 
-Last update: 2026-04-23 17:18 UTC
+Last update: 2026-04-23 20:50 UTC
