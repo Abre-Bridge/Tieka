@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "We must not cease from exploration. And the end of all our exploring will be to arrive where we began and to know the place for the first time." — T.S. Eliot
+> "Imagination is more important than knowledge." — Albert Einstein
 
-Last update: 2026-04-24 16:53 UTC
+Last update: 2026-04-24 20:44 UTC
