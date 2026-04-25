@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It is the power of thought that gives man power over nature." — Hans Christian Andersen
+> "Be the change that you want to see in the world." — Mahatma Gandhi
 
-Last update: 2026-04-25 08:50 UTC
+Last update: 2026-04-25 13:00 UTC
