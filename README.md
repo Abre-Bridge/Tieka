@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "He who cannot be a good follower cannot be a good leader." — Aristotle
+> "Everything is in your own heart." — Thich Nhat Hanh
 
-Last update: 2026-04-25 16:39 UTC
+Last update: 2026-04-25 20:37 UTC
