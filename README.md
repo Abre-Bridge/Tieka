@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Be the change that you want to see in the world." — Mahatma Gandhi
+> "He who cannot be a good follower cannot be a good leader." — Aristotle
 
-Last update: 2026-04-25 13:00 UTC
+Last update: 2026-04-25 16:39 UTC
