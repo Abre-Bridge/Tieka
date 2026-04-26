@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Everything is in your own heart." — Thich Nhat Hanh
+> "The cost of leadership is self-interest." — Simon Sinek
 
-Last update: 2026-04-25 20:37 UTC
+Last update: 2026-04-26 02:33 UTC
