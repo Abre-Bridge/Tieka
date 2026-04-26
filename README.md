@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Tension is who you think you should be. Relaxation is who you are." — Chinese Proverb
+> "Perplexity is the beginning of knowledge." — Kahlil Gibran
 
-Last update: 2026-04-26 16:40 UTC
+Last update: 2026-04-26 20:36 UTC
