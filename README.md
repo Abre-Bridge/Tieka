@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Nourish the mind like you would your body. The mind cannot survive on junk food." — Brian Tracy
+> "A good character is the best tombstone. Carve your name on hearts, not on marble." — Charles Spurgeon
 
-Last update: 2026-04-29 06:21 UTC
+Last update: 2026-04-29 10:03 UTC
