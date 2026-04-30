@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The ones who are crazy enough to think they can change the world, are the ones that do." — Steve Jobs
+> "If you are patient in one moment of anger, you will escape a hundred days of sorrow. " — Chinese Proverb
 
-Last update: 2026-04-30 02:44 UTC
+Last update: 2026-04-30 06:25 UTC
