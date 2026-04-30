@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If you want to be happy, set a goal that commands your thoughts, liberates your energy, and inspires your hopes." — Andrew Carnegie
+> "The ones who are crazy enough to think they can change the world, are the ones that do." — Steve Jobs
 
-Last update: 2026-04-29 21:02 UTC
+Last update: 2026-04-30 02:44 UTC
