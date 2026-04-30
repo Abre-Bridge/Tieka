@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Intelligence is the ability to adapt to change." — Stephen Hawking
+> "it's important to make sure that we're talking with each other in a way that heals, not in a way that wounds." — Barack Obama
 
-Last update: 2026-04-30 17:19 UTC
+Last update: 2026-04-30 20:58 UTC
