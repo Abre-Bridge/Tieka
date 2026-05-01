@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "An approximate answer to the right question is worth a great deal more than a precise answer to the wrong question." — John Tukey
+> "If you are ever the smartest person in the room, you are in the wrong room." — C. Sean McGee
 
-Last update: 2026-05-01 09:44 UTC
+Last update: 2026-05-01 13:15 UTC
