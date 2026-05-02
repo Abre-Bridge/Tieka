@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A hero is an ordinary person doing things in an extra ordinary way." — Christopher Reeve
+> "The first man gets the oyster, the second man gets the shell." — Andrew Carnegie
 
-Last update: 2026-05-02 13:06 UTC
+Last update: 2026-05-02 16:43 UTC
