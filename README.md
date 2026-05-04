@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Not all those who wander are lost." — J.R.R. Tolkien
+> "One of the most difficult things is not to change society - but to change yourself." — Nelson Mandela
 
-Last update: 2026-05-04 17:28 UTC
+Last update: 2026-05-04 21:07 UTC
