@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "One of the most difficult things is not to change society - but to change yourself." — Nelson Mandela
+> "Those who are possessed by nothing possess everything." — Morihei Ueshiba
 
-Last update: 2026-05-04 21:07 UTC
+Last update: 2026-05-05 02:34 UTC
