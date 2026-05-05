@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It's OK to have your eggs in one basket as long as you control what happens to that basket." — Elon Musk
+> "Your time is limited, so don't waste it living someone elses. life. Don't be trapped by dogma - which is living with the results of other people's thinking." — Steve Jobs
 
-Last update: 2026-05-05 10:00 UTC
+Last update: 2026-05-05 13:50 UTC
