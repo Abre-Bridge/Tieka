@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Your time is limited, so don't waste it living someone elses. life. Don't be trapped by dogma - which is living with the results of other people's thinking." — Steve Jobs
+> "The fact of the matter is that there will be nothing learned from any challenge in which we don't try our hardest." — Josh Waitzkin
 
-Last update: 2026-05-05 13:50 UTC
+Last update: 2026-05-05 17:24 UTC
