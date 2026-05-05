@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The fact of the matter is that there will be nothing learned from any challenge in which we don't try our hardest." — Josh Waitzkin
+> "We become what we believe." — Lolly Daskal
 
-Last update: 2026-05-05 17:24 UTC
+Last update: 2026-05-05 21:00 UTC
