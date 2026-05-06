@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A person hears only what they understand." — Johann Wolfgang von Goethe
+> "If you are going to achieve excellence in big things, you develop the habit in little matters." — Colin Powell
 
-Last update: 2026-05-06 14:05 UTC
+Last update: 2026-05-06 17:28 UTC
