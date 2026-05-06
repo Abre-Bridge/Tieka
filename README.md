@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "We have no more right to consume happiness without producing it than to consume wealth without producing it." — George Bernard Shaw
+> "A person hears only what they understand." — Johann Wolfgang von Goethe
 
-Last update: 2026-05-06 10:15 UTC
+Last update: 2026-05-06 14:05 UTC
