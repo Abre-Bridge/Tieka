@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If you are going to achieve excellence in big things, you develop the habit in little matters." — Colin Powell
+> "There is nothing like looking if you want to find something." — J.R.R. Tolkien
 
-Last update: 2026-05-06 17:28 UTC
+Last update: 2026-05-06 21:09 UTC
