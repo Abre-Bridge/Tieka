@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "There is nothing like looking if you want to find something." — J.R.R. Tolkien
+> "You want to live but do you know how to live? You are scared of dying and tell me, is the kind of life you lead really any different from being dead?" — Seneca
 
-Last update: 2026-05-06 21:09 UTC
+Last update: 2026-05-07 02:40 UTC
