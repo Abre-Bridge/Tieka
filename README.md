@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "You want to live but do you know how to live? You are scared of dying and tell me, is the kind of life you lead really any different from being dead?" — Seneca
+> "Quality is more important than quantity. One home run is much better than two doubles." — Steve Jobs
 
-Last update: 2026-05-07 02:40 UTC
+Last update: 2026-05-07 06:33 UTC
