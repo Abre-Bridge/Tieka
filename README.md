@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Death is not sad; the sad thing is that most people don't really live at all." — Dan Millman
+> "I'm not afraid of death, but I'm in no hurry to die." — Stephen Hawking
 
-Last update: 2026-05-07 21:02 UTC
+Last update: 2026-05-08 02:45 UTC
