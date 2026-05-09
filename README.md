@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Don't let making a living prevent you from making a life." — John Wooden
+> "You can do two things at once, but you can't focus effectively on two things at once." — Gary Keller
 
-Last update: 2026-05-08 20:58 UTC
+Last update: 2026-05-09 02:40 UTC
