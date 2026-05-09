@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "You can do two things at once, but you can't focus effectively on two things at once." — Gary Keller
+> "There are only two ways to live your life. One is as if nothing is a miracle. The other is as if everything is a miracle." — Albert Einstein
 
-Last update: 2026-05-09 02:40 UTC
+Last update: 2026-05-09 06:14 UTC
