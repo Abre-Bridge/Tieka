@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "What we know is a drop, what we don't know is an ocean. " — Isaac Newton
+> "But better die than live mechanically a life that is a repetition of repetitions." — D. H. Lawrence
 
-Last update: 2026-05-10 09:27 UTC
+Last update: 2026-05-10 13:14 UTC
