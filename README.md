@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "There are only two ways to live your life. One is as if nothing is a miracle. The other is as if everything is a miracle." — Albert Einstein
+> "Evil is whatever distracts. " — Franz Kafka
 
-Last update: 2026-05-11 10:59 UTC
+Last update: 2026-05-11 14:45 UTC
