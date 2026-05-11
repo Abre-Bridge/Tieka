@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "I don't pretend to know everything; I just only speak on matters I know I'll win." — Criss Jami
+> "Where ever you are, you are one with the clouds and one with the sun and the stars you see. You are one with everything." — Shunryu Suzuki
 
-Last update: 2026-05-11 17:53 UTC
+Last update: 2026-05-11 21:14 UTC
