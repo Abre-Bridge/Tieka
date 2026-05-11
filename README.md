@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Evil is whatever distracts. " — Franz Kafka
+> "I don't pretend to know everything; I just only speak on matters I know I'll win." — Criss Jami
 
-Last update: 2026-05-11 14:45 UTC
+Last update: 2026-05-11 17:53 UTC
