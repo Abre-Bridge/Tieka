@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "All you need is the plan, the road map, and the courage to press on to your destination." — Earl Nightingale
+> "Procrastination is attitude's natural assassin. There's nothing so fatiguing as an uncompleted task." — William James
 
-Last update: 2026-05-10 20:43 UTC
+Last update: 2026-05-11 02:55 UTC
