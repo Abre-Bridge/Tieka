@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Why live an ordinary life, when you can live an extraordinary one." — Tony Robbins
+> "The busy man is never wise and the wise man is never busy." — Lin Yutang
 
-Last update: 2026-05-12 21:17 UTC
+Last update: 2026-05-13 02:52 UTC
