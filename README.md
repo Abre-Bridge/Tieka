@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Go confidently in the direction of your dreams! Live the life you've imagined." — Henry David Thoreau
+> "We are willing to believe anything other than the truth." — Carlos Ruiz Zafon
 
-Last update: 2026-05-13 06:46 UTC
+Last update: 2026-05-13 10:25 UTC
