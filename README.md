@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Genius is one percent inspiration and ninety-nine percent perspiration." — Thomas Edison
+> "The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for." — Bob Marley
 
-Last update: 2026-05-14 06:44 UTC
+Last update: 2026-05-14 10:13 UTC
