@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "We never know how high we are till we are called to rise. Then if we are true to form our statures touch the skies." — Emily Dickinson
+> "Genius is one percent inspiration and ninety-nine percent perspiration." — Thomas Edison
 
-Last update: 2026-05-14 02:54 UTC
+Last update: 2026-05-14 06:44 UTC
