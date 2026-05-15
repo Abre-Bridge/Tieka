@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A life spent making mistakes is not only more honorable but more useful than a life spent doing nothing." — George Bernard Shaw
+> "Being ignorant is not so much a shame, as being unwilling to learn." — Benjamin Franklin
 
-Last update: 2026-05-15 17:25 UTC
+Last update: 2026-05-15 20:58 UTC
