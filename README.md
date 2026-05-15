@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Learn from the rejection and turn it into an opportunity!" — Mary Engelbreit
+> "If you want to see things just as they are, then you yourself must practice just as you are." — Dogen
 
-Last update: 2026-05-15 10:21 UTC
+Last update: 2026-05-15 14:02 UTC
