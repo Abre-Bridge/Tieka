@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If you want to see things just as they are, then you yourself must practice just as you are." — Dogen
+> "A life spent making mistakes is not only more honorable but more useful than a life spent doing nothing." — George Bernard Shaw
 
-Last update: 2026-05-15 14:02 UTC
+Last update: 2026-05-15 17:25 UTC
