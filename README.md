@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Perhaps the most tragic thing about mankind is that we are all dreaming about some magical garden over the horizon, instead of enjoying the roses that are right outside today." — Andrew Carnegie
+> "It's not whether you get knocked down, its whether you get back up." — Vince Lombardi
 
-Last update: 2026-05-16 16:56 UTC
+Last update: 2026-05-16 20:43 UTC
