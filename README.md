@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Growth is in a series of mistakes. That's the only way you learn." — Steve Harvey
+> "Perhaps the most tragic thing about mankind is that we are all dreaming about some magical garden over the horizon, instead of enjoying the roses that are right outside today." — Andrew Carnegie
 
-Last update: 2026-05-16 13:17 UTC
+Last update: 2026-05-16 16:56 UTC
