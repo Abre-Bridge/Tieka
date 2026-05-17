@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for." — Bob Marley
+> "We are all self-made, but only the successful will admit it." — Earl Nightingale
 
-Last update: 2026-05-17 06:42 UTC
+Last update: 2026-05-17 09:45 UTC
