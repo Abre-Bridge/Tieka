@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It's not whether you get knocked down, its whether you get back up." — Vince Lombardi
+> "Poetry is written with tears, fiction with blood, and history with invisible ink." — Carlos Ruiz Zafon
 
-Last update: 2026-05-16 20:43 UTC
+Last update: 2026-05-17 02:52 UTC
