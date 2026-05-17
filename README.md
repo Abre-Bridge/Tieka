@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "We are all self-made, but only the successful will admit it." — Earl Nightingale
+> "Do not bite at the bait of pleasure, till you know there is no hook beneath it." — Thomas Jefferson
 
-Last update: 2026-05-17 09:45 UTC
+Last update: 2026-05-17 13:15 UTC
