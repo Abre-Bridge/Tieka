@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Poetry is written with tears, fiction with blood, and history with invisible ink." — Carlos Ruiz Zafon
+> "The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for." — Bob Marley
 
-Last update: 2026-05-17 02:52 UTC
+Last update: 2026-05-17 06:42 UTC
