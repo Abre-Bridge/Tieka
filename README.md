@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "To be totally at leisure for one day is to be immortal for one day. " — Chinese Proverb
+> "Becoming a great leader doesn't mean being perfect. it means living with your imperfections." — Lolly Daskal
 
-Last update: 2026-05-18 03:29 UTC
+Last update: 2026-05-18 08:00 UTC
