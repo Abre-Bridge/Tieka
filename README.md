@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It's possible in ways both large or small to make a difference in someone's life." — Yanni
+> "It is not because things are difficult that we do not dare; it is because we do not dare that things are difficult.  " — Seneca
 
-Last update: 2026-05-18 15:28 UTC
+Last update: 2026-05-18 17:59 UTC
