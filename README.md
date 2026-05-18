@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It is not because things are difficult that we do not dare; it is because we do not dare that things are difficult.  " — Seneca
+> "I never dwell on what happened. You can't change it. Move forward." — Joan Rivers
 
-Last update: 2026-05-18 17:59 UTC
+Last update: 2026-05-18 21:10 UTC
