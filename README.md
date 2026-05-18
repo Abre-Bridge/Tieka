@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Becoming a great leader doesn't mean being perfect. it means living with your imperfections." — Lolly Daskal
+> "It's possible in ways both large or small to make a difference in someone's life." — Yanni
 
-Last update: 2026-05-18 08:00 UTC
+Last update: 2026-05-18 15:28 UTC
