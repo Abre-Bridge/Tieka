@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "To earn more you must learn more." — Brian Tracy
+> "It's not the size of the dog in the fight, it's the size of the fight in the dog." — Mark Twain
 
-Last update: 2026-05-19 18:03 UTC
+Last update: 2026-05-19 21:17 UTC
