@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "I never dwell on what happened. You can't change it. Move forward." — Joan Rivers
+> "When we allow negative messages to fester in our head, they take on a life of their own." — Lolly Daskal
 
-Last update: 2026-05-18 21:10 UTC
+Last update: 2026-05-19 02:58 UTC
