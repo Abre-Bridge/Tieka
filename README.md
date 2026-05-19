@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Eighty percent of success is showing up. " — Woody Allen
+> "To earn more you must learn more." — Brian Tracy
 
-Last update: 2026-05-19 14:57 UTC
+Last update: 2026-05-19 18:03 UTC
