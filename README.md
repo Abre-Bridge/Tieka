@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It's not the size of the dog in the fight, it's the size of the fight in the dog." — Mark Twain
+> "Sometimes you have to lose all you have to find out who you truly are." — Roy T. Bennett
 
-Last update: 2026-05-19 21:17 UTC
+Last update: 2026-05-20 02:58 UTC
