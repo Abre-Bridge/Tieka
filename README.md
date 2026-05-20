@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The four P's to success are pressure, persistence, perseverance, and prayer." — Steve Harvey
+> "All know that the drop merges into the ocean, but few know that the ocean merges into the drop." — Kabir
 
-Last update: 2026-05-20 14:58 UTC
+Last update: 2026-05-20 18:16 UTC
