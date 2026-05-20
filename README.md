@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Winners never quit and quitters never win." — Vince Lombardi
+> "Life is about choice. You can choose to be a victim or anything else you like to be." — Celestine Chua
 
-Last update: 2026-05-20 07:42 UTC
+Last update: 2026-05-20 10:48 UTC
