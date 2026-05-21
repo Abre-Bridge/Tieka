@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Not doing it is certainly the best way to not getting it.  " — Wayne Gretzky
+> "Associate yourself with men of good quality, if you esteem your own reputation; for 'tis better to be alone than in bad company. " — George Washington
 
-Last update: 2026-05-21 03:28 UTC
+Last update: 2026-05-21 07:48 UTC
