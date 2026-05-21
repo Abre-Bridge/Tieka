@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The most virtuous are those who content themselves with being virtuous without seeking to appear so." — Plato
+> "Not doing it is certainly the best way to not getting it.  " — Wayne Gretzky
 
-Last update: 2026-05-20 21:50 UTC
+Last update: 2026-05-21 03:28 UTC
