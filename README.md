@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Do not look upon this world with fear and loathing. Bravely face whatever the gods offer." — Morihei Ueshiba
+> "Teachers open the door. You enter by yourself. " — Chinese Proverb
 
-Last update: 2026-05-22 14:34 UTC
+Last update: 2026-05-22 17:49 UTC
