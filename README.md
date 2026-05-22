@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Conscience is a man's compass. " — Vincent van Gogh
+> "Do not look upon this world with fear and loathing. Bravely face whatever the gods offer." — Morihei Ueshiba
 
-Last update: 2026-05-22 10:48 UTC
+Last update: 2026-05-22 14:34 UTC
