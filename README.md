@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The future depends on what you do today. " — Mahatma Gandhi
+> "Conscience is a man's compass. " — Vincent van Gogh
 
-Last update: 2026-05-22 07:41 UTC
+Last update: 2026-05-22 10:48 UTC
