@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "There are no accidents... there is only some purpose that we haven't yet understood." — Deepak Chopra
+> "You are not only responsible for what you say, but also for what you do not say. " — Martin Luther
 
-Last update: 2026-05-22 21:07 UTC
+Last update: 2026-05-23 02:47 UTC
