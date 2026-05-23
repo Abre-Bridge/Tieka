@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "You are not only responsible for what you say, but also for what you do not say. " — Martin Luther
+> "The truth... It is a beautiful and terrible thing, and should therefore be treated with great caution." — Albus Dumbledore
 
-Last update: 2026-05-23 02:47 UTC
+Last update: 2026-05-23 06:32 UTC
