@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "My definition of success is control." — Kenneth Branagh
+> "Success is the child of drudgery and perseverance. It cannot be coaxed or bribed; pay the price and it is yours. " — Orison Swett Marden
 
-Last update: 2026-05-23 16:56 UTC
+Last update: 2026-05-23 20:48 UTC
