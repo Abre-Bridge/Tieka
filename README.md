@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Don't ever save anything for a special occasion. Being alive is the special occasion." — Mary Engelbreit
+> "Your time is limited, so don't waste it living someone elses. life. Don't be trapped by dogma - which is living with the results of other people's thinking." — Steve Jobs
 
-Last update: 2026-05-24 16:58 UTC
+Last update: 2026-05-24 20:53 UTC
