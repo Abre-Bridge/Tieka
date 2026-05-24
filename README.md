@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "He who loses wealth loses much; he who loses a friend loses more; but he that loses his courage loses all." — Miguel de Cervantes
+> "The goal is not to be perfect by the end, the goal is to be better today." — Simon Sinek
 
-Last update: 2026-05-24 09:52 UTC
+Last update: 2026-05-24 13:21 UTC
