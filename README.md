@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Do not save what is left after spending, but spend what is left after saving." — Warren Buffett
+> "He who loses wealth loses much; he who loses a friend loses more; but he that loses his courage loses all." — Miguel de Cervantes
 
-Last update: 2026-05-24 06:57 UTC
+Last update: 2026-05-24 09:52 UTC
