@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Your time is limited, so don't waste it living someone elses. life. Don't be trapped by dogma - which is living with the results of other people's thinking." — Steve Jobs
+> "I think it's very important to have a feedback loop, where you're constantly thinking about what you've done and how you could be doing it better." — Elon Musk
 
-Last update: 2026-05-24 20:53 UTC
+Last update: 2026-05-25 03:36 UTC
