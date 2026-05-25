@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "For your life to be great, your faith must be bigger than your fear." — Robin Sharma
+> "A fear-oriented man is always calculating, planning, arranging, safeguarding. His whole life is lost in this way." — Osho
 
-Last update: 2026-05-25 08:19 UTC
+Last update: 2026-05-25 14:49 UTC
