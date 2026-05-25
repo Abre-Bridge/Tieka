@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A fear-oriented man is always calculating, planning, arranging, safeguarding. His whole life is lost in this way." — Osho
+> "Winners are not afraid of losing. But losers are. Failure is part of the process of success. People who avoid failure also avoid success." — Robert Kiyosaki
 
-Last update: 2026-05-25 14:49 UTC
+Last update: 2026-05-25 17:41 UTC
