@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Before enlightenment; chop wood, carry water. After enlightenment; chop wood, carry water." — Buddha
+> "Better a diamond with a flaw than a pebble without one." — Chinese Proverb
 
-Last update: 2026-05-26 02:55 UTC
+Last update: 2026-05-26 07:42 UTC
