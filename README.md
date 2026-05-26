@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Where does a thought go when it's forgotten?" — Sigmund Freud
+> "Before enlightenment; chop wood, carry water. After enlightenment; chop wood, carry water." — Buddha
 
-Last update: 2026-05-25 21:03 UTC
+Last update: 2026-05-26 02:55 UTC
