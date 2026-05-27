@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Most of the important things in the world have been accompanied by people who have kept on trying when there seemed to be no hope at all." — Dale Carnegie
+> "The eye with which I see God is the same eye with which God sees me." — Meister Eckhart
 
-Last update: 2026-05-27 15:36 UTC
+Last update: 2026-05-27 18:25 UTC
