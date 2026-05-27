@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The man who does not value himself, cannot value anything or anyone." — Ayn Rand
+> "Most of the important things in the world have been accompanied by people who have kept on trying when there seemed to be no hope at all." — Dale Carnegie
 
-Last update: 2026-05-27 08:01 UTC
+Last update: 2026-05-27 15:36 UTC
