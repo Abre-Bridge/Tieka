@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "All leaders are readers." — Jim Rohn
+> "Those who have subdued their ego understand that it doesn't degrade you when others treat you poorly; it degrades them." — Ryan Holiday
 
-Last update: 2026-05-28 15:47 UTC
+Last update: 2026-05-28 18:34 UTC
