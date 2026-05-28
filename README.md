@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Believe you can and you're halfway there." — Theodore Roosevelt
+> "I am always doing what I cannot do yet, in order to learn how to do it." — Vincent van Gogh
 
-Last update: 2026-05-27 21:52 UTC
+Last update: 2026-05-28 02:54 UTC
