@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Making your mark on the world is hard. If it were easy, everybody would do it." — Barack Obama
+> "Definitions belong to the definers, not the defined." — Toni Morrison
 
-Last update: 2026-05-28 07:55 UTC
+Last update: 2026-05-28 11:36 UTC
