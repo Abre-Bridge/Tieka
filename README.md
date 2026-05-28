@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Those who have subdued their ego understand that it doesn't degrade you when others treat you poorly; it degrades them." — Ryan Holiday
+> "Decide upon your major definite purpose in life and then organize all your activities around it." — Brian Tracy
 
-Last update: 2026-05-28 18:34 UTC
+Last update: 2026-05-28 21:53 UTC
