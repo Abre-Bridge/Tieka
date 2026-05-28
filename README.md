@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Definitions belong to the definers, not the defined." — Toni Morrison
+> "All leaders are readers." — Jim Rohn
 
-Last update: 2026-05-28 11:36 UTC
+Last update: 2026-05-28 15:47 UTC
