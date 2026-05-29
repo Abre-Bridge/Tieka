@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Decide upon your major definite purpose in life and then organize all your activities around it." — Brian Tracy
+> "One of the most difficult things is not to change society - but to change yourself." — Nelson Mandela
 
-Last update: 2026-05-28 21:53 UTC
+Last update: 2026-05-29 02:58 UTC
