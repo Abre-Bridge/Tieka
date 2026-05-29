@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "We crave for new sensations but soon become indifferent to them. The wonders of yesterday are today common occurrences" — Nikola Tesla
+> "He who cheats the earth will be cheated by the earth." — Chinese Proverb
 
-Last update: 2026-05-29 07:52 UTC
+Last update: 2026-05-29 18:30 UTC
