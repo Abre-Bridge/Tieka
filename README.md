@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Winners are not afraid of losing. But losers are. Failure is part of the process of success. People who avoid failure also avoid success." — Robert Kiyosaki
+> "The best of us sometimes eat our words." — Albus Dumbledore
 
-Last update: 2026-05-30 02:51 UTC
+Last update: 2026-05-30 09:58 UTC
