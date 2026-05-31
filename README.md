@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The things I carry are my thoughts. That's it. They are the only weight. My thoughts determine whether I am free and light or burdened." — Kamal Ravikant
+> "Intuition is the ear of the soul." — Neale Donald Walsch
 
-Last update: 2026-05-31 10:13 UTC
+Last update: 2026-05-31 13:41 UTC
