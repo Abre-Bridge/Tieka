@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Intuition is the ear of the soul." — Neale Donald Walsch
+> "A leader leads by example, not by force." — Sun Tzu
 
-Last update: 2026-05-31 13:41 UTC
+Last update: 2026-05-31 17:04 UTC
