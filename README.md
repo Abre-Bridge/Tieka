@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "A leader leads by example, not by force." — Sun Tzu
+> "I defeat my enemies when I make them my friends." — Dalai Lama
 
-Last update: 2026-05-31 17:04 UTC
+Last update: 2026-05-31 20:57 UTC
