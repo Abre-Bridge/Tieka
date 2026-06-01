@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If you chase two rabbits, you catch none." — Confucius
+> "If someone betrays you once, it's their fault; if they betray you twice, it's your fault." — Eleanor Roosevelt
 
-Last update: 2026-06-01 17:34 UTC
+Last update: 2026-06-01 22:32 UTC
