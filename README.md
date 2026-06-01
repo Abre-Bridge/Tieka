@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "I defeat my enemies when I make them my friends." — Dalai Lama
+> "When the root is strong, the fruit is sweet." — Bob Marley
 
-Last update: 2026-05-31 20:57 UTC
+Last update: 2026-06-01 03:50 UTC
