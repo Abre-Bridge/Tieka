@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Fortunate are those who take the first steps." — Paulo Coelho
+> "When you're the only sane person, you look like the only insane person." — Criss Jami
 
-Last update: 2026-06-02 16:20 UTC
+Last update: 2026-06-02 22:21 UTC
