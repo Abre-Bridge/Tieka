@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If someone betrays you once, it's their fault; if they betray you twice, it's your fault." — Eleanor Roosevelt
+> "Excellence is not a skill. It is an attitude." — Ralph Marston
 
-Last update: 2026-06-01 22:32 UTC
+Last update: 2026-06-02 03:43 UTC
