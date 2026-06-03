@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "When you're the only sane person, you look like the only insane person." — Criss Jami
+> "The more you are motivated by Love, The more Fearless & Free your action will be." — Dalai Lama
 
-Last update: 2026-06-02 22:21 UTC
+Last update: 2026-06-03 03:52 UTC
