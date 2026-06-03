@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Find the game where you can win, and then commit your life to playing it; and play to win." — Robert Kiyosaki
+> "How many times do you have to get hit over the head until you figure out who's hitting you?" — Harry S. Truman
 
-Last update: 2026-06-03 08:53 UTC
+Last update: 2026-06-03 16:44 UTC
