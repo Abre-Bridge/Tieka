@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The more you are motivated by Love, The more Fearless & Free your action will be." — Dalai Lama
+> "Find the game where you can win, and then commit your life to playing it; and play to win." — Robert Kiyosaki
 
-Last update: 2026-06-03 03:52 UTC
+Last update: 2026-06-03 08:53 UTC
