@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The only limits in your life are those that you set yourself." — Celestine Chua
+> "The truth is heavy, therefore few care to carry it." — Winston Churchill
 
-Last update: 2026-06-05 14:46 UTC
+Last update: 2026-06-05 17:52 UTC
