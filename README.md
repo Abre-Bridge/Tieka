@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Those who know, do. Those that understand, teach." — Aristotle
+> "What the eye doesn't see and the mind doesn't know, doesn't exist." — D. H. Lawrence
 
-Last update: 2026-06-06 06:50 UTC
+Last update: 2026-06-06 10:01 UTC
