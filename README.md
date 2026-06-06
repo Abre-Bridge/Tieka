@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Do what you can, with what you have, where you are." — Colin R. Davis
+> "Those who know, do. Those that understand, teach." — Aristotle
 
-Last update: 2026-06-06 02:54 UTC
+Last update: 2026-06-06 06:50 UTC
