@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "I believe that potential is unlimited - success depends on daring to act on dreams." — Estee Lauder
+> "Your best life will not be found in comfort. It will be found in fighting for what you believe in." — Maxime Lagace
 
-Last update: 2026-06-06 17:11 UTC
+Last update: 2026-06-06 21:01 UTC
