@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "If you see a get rich quick scheme, that's someone else trying to get rich off of you." — Naval Ravikant
+> "Successful people appreciate where they have come from, but they don't let their past set the tone for their future." — Steve Harvey
 
-Last update: 2026-06-07 03:40 UTC
+Last update: 2026-06-07 07:52 UTC
