@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Successful people appreciate where they have come from, but they don't let their past set the tone for their future." — Steve Harvey
+> "Become the kind of leader that people would follow voluntarily, even if you had no title or position." — Brian Tracy
 
-Last update: 2026-06-07 07:52 UTC
+Last update: 2026-06-07 10:26 UTC
