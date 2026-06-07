@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "I wasn't brave, I just didn't have time to be scared." — Amelia Earhart
+> "It is not the knowing that is difficult, but the doing." — Chinese Proverb
 
-Last update: 2026-06-07 13:48 UTC
+Last update: 2026-06-07 17:14 UTC
