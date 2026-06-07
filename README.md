@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "It is not the knowing that is difficult, but the doing." — Chinese Proverb
+> "Do not try to be on the side of the majority, but live according to your inner laws." — Marcus Aurelius
 
-Last update: 2026-06-07 17:14 UTC
+Last update: 2026-06-07 21:10 UTC
