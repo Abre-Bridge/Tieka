@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Become the kind of leader that people would follow voluntarily, even if you had no title or position." — Brian Tracy
+> "I wasn't brave, I just didn't have time to be scared." — Amelia Earhart
 
-Last update: 2026-06-07 10:26 UTC
+Last update: 2026-06-07 13:48 UTC
