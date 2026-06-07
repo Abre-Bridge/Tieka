@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Your best life will not be found in comfort. It will be found in fighting for what you believe in." — Maxime Lagace
+> "If you see a get rich quick scheme, that's someone else trying to get rich off of you." — Naval Ravikant
 
-Last update: 2026-06-06 21:01 UTC
+Last update: 2026-06-07 03:40 UTC
