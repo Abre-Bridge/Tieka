@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Life is about choice. You can choose to be a victim or anything else you like to be." — Celestine Chua
+> "Time you enjoy wasting, was not wasted." — John Lennon
 
-Last update: 2026-06-08 08:53 UTC
+Last update: 2026-06-08 15:46 UTC
