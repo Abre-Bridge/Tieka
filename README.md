@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The deeper the truth in a creative work, the longer it will live." — Charlie Chaplin
+> "It is in changing that we find purpose." — Heraclitus
 
-Last update: 2026-06-10 18:28 UTC
+Last update: 2026-06-10 21:59 UTC
