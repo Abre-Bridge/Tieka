@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "One always begins to forgive a place as soon as it's left behind." — Charles Dickens
+> "The whole is greater than the sum of its parts." — Aristotle
 
-Last update: 2026-06-11 15:56 UTC
+Last update: 2026-06-11 22:01 UTC
