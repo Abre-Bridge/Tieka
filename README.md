@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "Hope and fear come from feeling that we lack something; they come from a sense of poverty." — Pema Chodron
+> "Freedom itself demands discomfort." — Mark Manson
 
-Last update: 2026-06-12 18:04 UTC
+Last update: 2026-06-12 21:41 UTC
