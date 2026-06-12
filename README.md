@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The essence of the Way is detachment." — Bodhidharma
+> "In life you need either inspiration or desperation." — Tony Robbins
 
-Last update: 2026-06-12 03:42 UTC
+Last update: 2026-06-12 08:23 UTC
