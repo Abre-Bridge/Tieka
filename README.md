@@ -443,6 +443,6 @@ Appwrite Database Setup can be found [here](https://jsmastery.notion.site/Databa
 
 ## 💬 Dev Quote
 
-> "The whole is greater than the sum of its parts." — Aristotle
+> "The essence of the Way is detachment." — Bodhidharma
 
-Last update: 2026-06-11 22:01 UTC
+Last update: 2026-06-12 03:42 UTC
