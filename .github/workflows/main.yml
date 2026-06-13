@@ -1,97 +1,20 @@
-name: Smart README Update
+name: Daily Contribution
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
-  update-readme:
+  commit:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
-
-      - name: Fetch quote
-        run: |
-          echo "Fetching quote..."
-          QUOTE=""
-          AUTHOR=""
-
-          # --- Attempt 1: ZenQuotes (reliable, no auth needed) ---
-          RESPONSE=$(curl -s --noproxy '*' --max-time 10 \
-            "https://zenquotes.io/api/random" 2>/dev/null || echo "")
-          QUOTE=$(echo "$RESPONSE" | jq -r '.[0].q' 2>/dev/null)
-          AUTHOR=$(echo "$RESPONSE" | jq -r '.[0].a' 2>/dev/null)
-
-          # --- Attempt 2: Original API as fallback ---
-          if [ -z "$QUOTE" ] || [ "$QUOTE" = "null" ]; then
-            RESPONSE=$(curl -s --noproxy '*' --max-time 10 \
-              "https://programming-quotesapi.vercel.app/api/random" 2>/dev/null || echo "")
-            QUOTE=$(echo "$RESPONSE" | jq -r '.en' 2>/dev/null)
-            AUTHOR=$(echo "$RESPONSE" | jq -r '.author' 2>/dev/null)
-          fi
-
-          # --- Attempt 3: Hardcoded fallback pool ---
-          if [ -z "$QUOTE" ] || [ "$QUOTE" = "null" ]; then
-            QUOTES=(
-              "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.|Martin Fowler"
-              "First, solve the problem. Then, write the code.|John Johnson"
-              "Simplicity is the soul of efficiency.|Austin Freeman"
-              "Make it work, make it right, make it fast.|Kent Beck"
-              "Stay consistent. Discipline beats motivation.|Unknown"
-            )
-            RANDOM_ENTRY="${QUOTES[$RANDOM % ${#QUOTES[@]}]}"
-            QUOTE="${RANDOM_ENTRY%%|*}"
-            AUTHOR="${RANDOM_ENTRY##*|}"
-          fi
-
-          echo "> \"$QUOTE\" — $AUTHOR" > quote.txt
-          echo "Quote saved: $(cat quote.txt)"
-
-      - name: Update README
-        run: |
-          # Ensure the section exists
-          grep -q "## 💬 Dev Quote" README.md || printf "\n## 💬 Dev Quote\n\n" >> README.md
-
-          # Replace the line immediately after the section header with the new quote
-          awk '
-            /## 💬 Dev Quote/ {
-              print
-              print ""
-              system("cat quote.txt")
-              found = 1
-              next
-            }
-            found && /^>/ {
-              found = 0
-              next
-            }
-            found && /^[[:space:]]*$/ {
-              next
-            }
-            { found = 0; print }
-          ' README.md > temp.md && mv temp.md README.md
-
-          # Update or append timestamp
-          TIMESTAMP="Last update: $(date -u '+%Y-%m-%d %H:%M UTC')"
-          if grep -q "<!--LAST_UPDATED-->" README.md; then
-            sed -i "s|<!--LAST_UPDATED-->|$TIMESTAMP|" README.md
-          elif grep -q "Last update:" README.md; then
-            sed -i "s|Last update:.*|$TIMESTAMP|" README.md
-          else
-            printf "\n%s\n" "$TIMESTAMP" >> README.md
-          fi
-
-      - name: Commit & push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git diff --staged --quiet || git commit -m "chore: update dev quote [skip ci]"
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          date >> activity.log
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add activity.log
+          git commit -m "chore: daily update"
           git push
